@@ -20,7 +20,7 @@ btnGet.addEventListener('click', () => {
         header.appendChild(textNode);
         headerRow.appendChild(header);
     });
-    table.appendChild(headerRow);
+    table.appendChild(headerRow);   
     employees.forEach(emp => {
         let row = document.createElement('tr');
         Object.values(emp).forEach(text => {
