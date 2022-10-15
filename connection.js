@@ -40,3 +40,26 @@ connection.end(function(err) {
   console.log('Close the database connection.');
 });
 */
+
+/*--------------criação do banco----------------------------/
+create database loja;
+
+create table usuarios(
+id int PRIMARY KEY AUTO_INCREMENT,
+email varchar(255) not null,
+senha varchar(25) not null,
+unique(email)
+);
+
+
+delimiter $$
+create trigger email_repetido
+before insert on usuarios for each row
+begin
+if new.email = email
+then signal sqlstate "45000"
+	set message_text = "email ja cadastrado";
+	end if;
+	end;
+	$$
+delimiter ;*/
