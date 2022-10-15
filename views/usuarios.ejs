@@ -1,4 +1,19 @@
-let btnGet = document.querySelector('button');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./styles.css">
+</head>
+<body>
+    
+    <div>
+        <button class="btn">aaa</button>
+        <div id="table"></div>
+    </div>
+    <script>
+        let btnGet = document.querySelector('button');
 let myTable = document.querySelector('#table');
 
 let employees =[
@@ -8,7 +23,7 @@ let employees =[
     {nome:'antonio oswaldo',telefone:'16 99452-6734',endereço:'rua água santa nº511',idade:74,profissão:'aposentado'}
 ]
 
-let headers = ['Nome','Telefone','Endereço','Idade','Profissão']
+let headers = [resultados.usuarios.id,results.usuarios.email,results.usuarios.senha]
 
 
 btnGet.addEventListener('click', () => {
@@ -21,9 +36,9 @@ btnGet.addEventListener('click', () => {
         headerRow.appendChild(header);
     });
     table.appendChild(headerRow);   
-    employees.forEach(emp => {
+    usuarios.forEach(usu => {
         let row = document.createElement('tr');
-        Object.values(emp).forEach(text => {
+        Object.values(usu).forEach(text => {
             let cell = document.createElement('td');
             let textNode = document.createTextNode(text);
             cell.appendChild(textNode);
@@ -33,3 +48,6 @@ btnGet.addEventListener('click', () => {
     });
     myTable.appendChild(table);
 });
+    </script>
+</body>
+</html>

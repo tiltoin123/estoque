@@ -1,14 +1,14 @@
-const mysql = require('mysql');
+import {mysql} from mysql;
 
-const connection = mysql.createConnection({
+export const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: '123456',
   database: 'loja',
   port:3306
 });
-
-let sql = `SELECT * FROM usuarios`;
+/*
+const sql = 'desc usuarios';
 
 connection.connect(function(err) {
     if (err) {
@@ -24,7 +24,7 @@ connection.connect(function(err) {
     
   });
 
-/*
+
 connection.connect(function(err) {
   if (err) {
     return console.error('error: ' + err.message);

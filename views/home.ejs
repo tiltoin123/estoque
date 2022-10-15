@@ -7,43 +7,34 @@
     <title>Document</title>
 </head>
 <body>
-  <script type="module" src="cad_us.js"></script>
-    <form enctype="multipart/form-data" method="post" name="fileinfo">
+    <form  method="POST" action='/register'>
         <p>
-          <label
-            >Your email address:
+          <label>seu email:
             <input
-              type="email"
-              autocomplete="on"
-              id="email"
-              placeholder="email"
+              type="text"
+              name="email"
               required
               size="32"
               maxlength="64" />
           </label>
         </p>
         <p>
-            <label
-              >Your password:
-              <input
+        <label>sua senha:
+            <input
                 type="password"
-                id="password"
-                name="password"
-                placeholder="password"
+                name="senha"
                 required
                 size="32"
                 maxlength="64" />
             </label>
           </p>
         <p>
-          <input type="button" id="btn" value="criar usuario" />
+          <button>criar usuario</button>
         </p>
-        <div id="msg">
-            <pre></pre>
-        </div>
       </form>
-      
-      
+      <a href="http://localhost:3000/usuarios">
+      <button>usuarios</button>
+      </a>
 
 </body>
 </html>
