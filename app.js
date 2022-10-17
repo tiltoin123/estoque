@@ -38,26 +38,21 @@ app.post("/register",function(req,res){
 });
 
 app.get("/usuarios",function(req,res){
-	connection.query('SELECT count(*) as colunas FROM information_schema.columns WHERE table_name = "usuarios"', function(error,rows,fields){
-		if(error) throw error;
-		console.log('numero de colunas :', rows[0].colunas);
-		n_colunas = rows[0].colunas;
-	});
-
-	connection.query('select count(*) as linhas from usuarios', function(error,rows,fields){
-		if(error) throw error;
-		console.log('numero de linhas :', rows[0].linhas);
-		n_linhas = rows[0].linhas;
-	});
 	connection.query('select * from usuarios', function(error,rows,fields){
 		if(error) throw error;
-		let id = rows.map(({id})=>id);
-		let email = rows.map(({email})=>email);
-		let senha = rows.map(({senha})=>senha);
-		console.log('seu resultado é :', id);
-		console.log('seu resultado é :', email);
-		console.log('seu resultado é :', senha);
-		
+		let ids = rows.map(({id})=>id);
+		let emails = rows.map(({email})=>email);
+		let senhas = rows.map(({senha})=>senha);
+		let campos = fields.map(({name})=>name);
+		let n_campos = 0;
+		let n_colunas= 0;
+		campos.forEach(campo=> n_campos+=1);
+		emails.forEach(email=> n_colunas+=1);
+		//console.log('seu resultado é :', ids);
+		//console.log('seu resultado é :', emails);
+		//console.log('seu resultado é :', senhas);
+		//console.log(n_campos);
+		//console.log(n_colunas);
 		res.render("usuarios");
 	});
 });
