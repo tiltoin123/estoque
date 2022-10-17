@@ -9,21 +9,17 @@
 <body>
     
     <div>
-        <button class="btn">aaa</button>
+        <button   method="get" action='/usuarios'class="btn">aaa</button>
         <div id="table"></div>
     </div>
     <script>
-        let btnGet = document.querySelector('button');
+
+let btnGet = document.querySelector('button');
 let myTable = document.querySelector('#table');
 
-let employees =[
-    {nome:'geralda',telefone:'16 99292-1234',endereço:'rua dos caiapós nº511',idade:54,profissão:'servente de pedreiro'},
-    {nome:'enzo',telefone:'16 98792-1234',endereço:'avenida wilson savio de mello nº511',idade:20,profissão:'manicure'},
-    {nome:'josivaldo',telefone:'16 99292-7673',endereço:'rua do comércio nº2005',idade:30,profissão:'boiadeiro'},
-    {nome:'antonio oswaldo',telefone:'16 99452-6734',endereço:'rua água santa nº511',idade:74,profissão:'aposentado'}
-]
 
-let headers = [resultados.usuarios.id,results.usuarios.email,results.usuarios.senha]
+
+let headers = []
 
 
 btnGet.addEventListener('click', () => {
