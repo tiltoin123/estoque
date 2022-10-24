@@ -3,8 +3,8 @@ const app = express();
 //const mysql = require('mysql');
 const bodyParser = require("body-parser");
 var mysqlConf = require('./config').mysql_pool;
-
 app.set("view engine","ejs")
+app.use(express.static( "/src"));
 app.use(bodyParser.urlencoded({extended: true}));
 
 //const connection = mysql.createConnection({
