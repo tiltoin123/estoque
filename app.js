@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
-const mysql = require('mysql');
+//const mysql = require('mysql');
 const bodyParser = require("body-parser");
-var mysqlConf = require('config.js').mysql_pool;
+var mysqlConf = require('./config').mysql_pool;
 
 app.set("view engine","ejs")
 app.use(bodyParser.urlencoded({extended: true}));

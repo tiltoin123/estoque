@@ -2,7 +2,9 @@ var mysqlConf = require('config.js').mysql_pool;
 
     mysqlConf.getConnection(function (err, connection) {
         connection.query('{select * from usuarios}' , function (err, rows,fields) {
-            connection.release();   //---> don't forget the connection release.
+            let campos = fields.map(({name})=>name);
+            connection.release(); 
+            return rows,campos
         });
     });
 
@@ -10,7 +12,7 @@ let btnGet = document.querySelector('button');
 let myTable = document.querySelector('#table');
 
 
-let employees = linhas;
+let employees = rows;
 
 let headers = campos;
 
