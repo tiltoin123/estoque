@@ -1,4 +1,4 @@
-var mysqlConf = require('config.js').mysql_pool;
+var mysqlConf = require('../config').mysql_pool;
 
     mysqlConf.getConnection(function (err, connection) {
         connection.query('{select * from usuarios}' , function (err, rows,fields) {
