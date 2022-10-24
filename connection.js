@@ -1,12 +1,16 @@
-import {mysql} from mysql;
+var mysql = require("mysql");
 
-export const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '123456',
-  database: 'loja',
-  port:3306
-});
+var config;
+config = {
+    mysql_pool : mysql.createPool({
+        host     : 'localhost',
+        user     : 'root',
+        password : 'fatec123*',
+        database : 'loja'
+    })
+};
+
+module.exports = config;
 /*
 const sql = 'desc usuarios';
 
