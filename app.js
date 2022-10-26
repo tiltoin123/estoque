@@ -2,9 +2,10 @@ const express = require('express');
 const app = express();
 //const mysql = require('mysql');
 const bodyParser = require("body-parser");
-var mysqlConf = require('./config').mysql_pool;
+var config = require('./config');
 app.set("view engine","ejs")
-//app.use(express.static( "/src"));
+//app.use(express.static(__dirname + "/src"));
+const path = require("path");
 app.use(bodyParser.urlencoded({extended: true}));
 
 //const connection = mysql.createConnection({
@@ -31,7 +32,7 @@ app.post("/register",function(req,res){
 	var person = {email:req.body.email,
                   senha:req.body.senha
 				 };
-	var end_result =mysqlConf.query('INSERT INTO usuarios SET ?',person, function(error,results){
+		config.query('INSERT INTO usuarios SET ?',person, function(error,results){
 		if(error) throw error
 		res.redirect("/");
         console.log(results)
@@ -43,27 +44,14 @@ app.post("/register",function(req,res){
 		
 
 
-app.get("/usuarios",function(req,res){
-	//let linhas
-	//mysqlConf.query('select * from usuarios', function(error,rows,fields){
-	//	if(error) throw error;
-		//let n_campos = 0;
-		//let n_colunas= 0;
-		//campos.forEach(campo=> n_campos+=1);
-		//emails.forEach(email=> n_colunas+=1);
-		//console.log('seu resultado é :', ids);
-		//console.log('seu resultado é :', emails);
-		//console.log('seu resultado é :', senhas);
-		//console.log('seu resultado é:', campos);
-		//console.log(n_campos);
-		//console.log(n_colunas);
-		//let ids = rows.map(({id})=>id);
-		//let emails = rows.map(({email})=>email);
-		//let senhas = rows.map(({senha})=>senha);
-		//let campos = fields.map(({name})=>name);
-		//linhas = rows;
-		res.render("usuarios")
-	})
+app.get("/usuarios",(req,res)=>{
+		config.query('select * from usuarios' ,  (err,results) =>{
+			//let campos = fields.map(({name})=>name);
+		if(err) throw err;
+		//console.log(results)
+		res.render("usuarios",{linhas: results})
+	});
+	});
 	
 
 

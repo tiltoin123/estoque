@@ -1,14 +1,13 @@
 var mysql = require("mysql");
 
 var config;
-config = {
-    mysql_pool : mysql.createPool({
+config = mysql.createConnection({
         host     : 'localhost',
         user     : 'root',
-        password : 'fatec123*',
-        database : 'loja'
+        password : '123456',
+        database : 'loja',
+        port:3306
     })
-};
 
 module.exports = config;
 /*
