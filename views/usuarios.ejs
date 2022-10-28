@@ -7,14 +7,20 @@
     <link href="../styles.css">
 </head>
 <body>
-    teste <%= console.table(linhas); %>
+    <% console.log(linhas[0].email) %>
+    <% for (let i=0; i < linhas.lenght; i++) { %>
+        <br>
+        <h3><%= linhas[i].senha %> $</h3>
+    <% } %>
+
     <div>
 
         <div id="table"></div>
+        <button id="btn">gerara tabela</button>
     </div>
 <!--     
     <script>
-let btnGet = document.querySelector('button');
+let btnGet = document.querySelector('#btn');
 let myTable = document.querySelector('#table');
 let employees = linhas;
 let headers = employees.map(({name})=>name);

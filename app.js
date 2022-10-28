@@ -49,7 +49,7 @@ app.get("/usuarios",(req,res)=>{
 			//let campos = fields.map(({name})=>name);
 		if(err) throw err;
 		//console.log(results)
-		res.render("usuarios",{linhas: results})
+		res.render("usuarios",{ linhas: results })
 	});
 	});
 	
