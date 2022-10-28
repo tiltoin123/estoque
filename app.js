@@ -46,10 +46,11 @@ app.post("/register",function(req,res){
 
 app.get("/usuarios",(req,res)=>{
 		config.query('select * from usuarios' ,  (err,results) =>{
-			//let campos = fields.map(({name})=>name);
+		var linhas = results;
+		//let campos = fields.map(({name})=>name);
 		if(err) throw err;
 		//console.log(results)
-		res.render("usuarios",{ linhas: results })
+		res.render("usuarios",{linhas})
 	});
 	});
 	

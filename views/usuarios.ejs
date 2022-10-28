@@ -7,10 +7,16 @@
     <link href="../styles.css">
 </head>
 <body>
-    <% console.log(linhas[0].email) %>
-    <% for (let i=0; i < linhas.lenght; i++) { %>
-        <br>
-        <h3><%= linhas[i].senha %> $</h3>
+
+    algo
+    <% let a=linhas[0].email %><br>
+    <%=a%><br>
+    <%= linhas[1].email %><br>
+    <%console.log(a + " jacaré")%>
+
+    <% for (let i=0; i < linhas.length; i++){ %>
+    ID: <%= linhas[i].id %> <br>     EMAIL: <%= linhas[i].email %> <br>     SENHA: <%= linhas[i].senha %><br><br>
+    sua mae
     <% } %>
 
     <div>
